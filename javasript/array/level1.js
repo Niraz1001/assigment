@@ -12,3 +12,4 @@ console.log(arr.length);
 //expected output is [5,4,3]
 
 console.log(arr.reverse());
+
