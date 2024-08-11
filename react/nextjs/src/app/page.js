@@ -1,7 +1,9 @@
 
+'use client'
 import { Button, Card, CardBody, Image } from '@nextui-org/react'
 import Link from 'next/link'
 import React from 'react'
+
 
 const page = () => {
   return (
