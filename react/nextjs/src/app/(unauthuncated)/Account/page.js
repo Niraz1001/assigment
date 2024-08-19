@@ -7,7 +7,7 @@ import React from 'react'
 
 
 
-const page = () => {
+const Account = () => {
 
 const router = useRouter()
 const forstudent = ()=> {
@@ -32,4 +32,4 @@ const forbussines = ()=>{
   )
 }
 
-export default page
+export default Account
