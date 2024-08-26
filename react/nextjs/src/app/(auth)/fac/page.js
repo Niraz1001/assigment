@@ -26,7 +26,7 @@ const [opendiv,setdiv]=useState(false)
 
  const Geratereaction=()=> {
     if (reaction=='like') {
-      <button className='flex gap-2' onMouseEnter={() => setdiv(true)}><FaRegThumbsUp size={20} color='blue-600' />Like</button>;
+      <button className='flex gap-2' onMouseEnter={() => setdiv(true)}><FaRegThumbsUp size={20} color='blue-600' />Like</button>
     }
     else if (reaction=='love') {
       <button className='flex gap-2' onMouseEnter={()=>setdiv(true)}><FaHeart size={20} color=' text-red-600'/>Love</button>
