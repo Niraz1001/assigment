@@ -1,16 +1,17 @@
 'use client'
 import React from 'react'
-import Cardpage from '@/component/card/page';
+import Home from './(auth)/home/page';
 
-const Home = () => {
+
+const Main = () => {
   return (
-    <div className='flex gap-10 justify-center items-center h-screen '>
-      <Cardpage releasetime ="Comming soon"  notify="nice"/>
-      <Cardpage releasetime ="already come"  notify="wow"/>
-      <Cardpage releasetime ="outed song"  notify="wah"/>
-      
-    </div>
+    
+   <>
+<Home/>
+
+   </>   
+   
   )
 };
 
-export default Home
+export default Main

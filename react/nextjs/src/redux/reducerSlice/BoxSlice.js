@@ -28,10 +28,14 @@ export const BoxSlice = createSlice({
         state.bgcolor= action.payload
       },
 
+      changepadding: (state, action) => {
+        state.padding= action.payload
+      },
+
   }
 })
 
 
-export const {Changetocircle, Changetoleftmarginin,Changetoleftmarginde,changebg} = BoxSlice.actions
+export const {Changetocircle, Changetoleftmarginin,Changetoleftmarginde,changebg,changepadding} = BoxSlice.actions
 
 export default BoxSlice.reducer

@@ -1,5 +1,5 @@
 'use client'
-import { changebg, Changetocircle, Changetoleftmarginde, Changetoleftmarginin, } from '@/redux/reducerSlice/BoxSlice'
+import { changebg, changepadding, Changetocircle, Changetoleftmarginde, Changetoleftmarginin, } from '@/redux/reducerSlice/BoxSlice'
 import { Button } from '@nextui-org/react'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,6 +10,7 @@ const Box = () => {
 
     const handlechange =(e)=>{
       dispatch(changebg(e.target.value))
+      dispatch(changepadding(e.target.value))
     }
 
   return (
