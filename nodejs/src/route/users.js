@@ -1,14 +1,33 @@
-const {Route} = require('express')
+const {Router, request} = require('express')
 const mongoose = require('mongoose');
-const UserRoute = Route();
+const UserRoute = Router();
 
 mongoose.connect('mongodb://127.0.0.1:27017/aayojob');
 
-const forstudent = mongoose.model('forstudent', { Name: String, Email: String, Password: String, ComfirmPassword: String});
-forstudent.create({ name: 'Zildjian',Email: 'nirajcodingmaster232@gmail.com', Password: 'hello@1123', ComfirmPassword:'hello@1123'});
+const forstudent = mongoose.model('forstudent', 
+  { name: String, 
+    Email: String, 
+    Password: String,
+  });
 
-const forbussiness = mongoose.model('forbussiness', { Name: String, Email: String, Password: String, ComfirmPassword: String});
-forbussiness.create({ name: 'Zildjian',Email: 'nirajcodingmaster232@gmail.com', Password: 'hello@1123', ComfirmPassword:'hello@1123'});
+
+UserRoute.post('/register', (req, res)=>{
+  forstudent.create(req.body)
+  res.send("created")
+})
+
+
+const forbussiness = mongoose.model('forbussiness', 
+  { Name: String, 
+    Email: String, 
+    Password: String, 
+  }); 
+
+UserRoute.post('/forbussiness', (req, res)=>{
+  forbussiness.create(req.body)
+  res.send("created")
+})
+
 
   
   module.exports = UserRoute;

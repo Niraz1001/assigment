@@ -9,7 +9,7 @@ app.get('/users', (req, res) => {
 })
 
 
-use.app(UserRoute)
+app.use(UserRoute)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
