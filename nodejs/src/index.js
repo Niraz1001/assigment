@@ -1,17 +1,14 @@
-const express = require('express')
+const express = require('express');
 const UserRoute = require('./route/users');
+var cors = require('cors')
 
-const app = express()
-const port = 3001
+const app = express();
+const port = 3001;
 
-app.get('/users', (req, res) => {
-  res.send('ram, shyam, sani rani, mohan, sit gita')
-})
-
-
-app.use(UserRoute)
-app.use(express.json())
+app.use(express.json());
+app.use(cors())
+app.use(UserRoute);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Server is running on port ${port}`);
+});

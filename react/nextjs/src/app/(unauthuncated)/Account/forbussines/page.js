@@ -20,18 +20,18 @@ const SignupSchema = Yup.object().shape({
     .matches(/[A-Z]/, 'Password requires an uppercase letter')
     .matches(/[^\w]/, 'Password requires a symbol'),
   confirm: Yup.string()
-    .oneOf([Yup.ref('pass'), null], 'Must match "password" field value'),
+    .oneOf([Yup.ref('pass'), null], 'Password doesnot match'),
 });
 
 export const Bussregister = () => (
   <div className='w-screen h-screen flex justify-center items-center'>
     <Card className='p-5'>
-    <CardBody className='flex gap-5  w-96'>
+    <CardBody className='flex gap-4  w-96'>
     <center><Image width={100} alt="Logo" src='/jobaayo.png' /></center>
     <p className='text-lg text-center mb-4'>Register to JobAayo</p>
     <Formik  
       initialValues={{
-        BussinesName: '',
+        firstName: '',
         email: '',
         pass:'',
         confirm:'',
@@ -45,9 +45,9 @@ export const Bussregister = () => (
       }}
     >
       {({ errors, touched }) => (
-        <form >
+        <Form >
 
-          <Field name="BussinesName"  placeholder="Bussines Name" className='bg-white w-full border border-slate-300 py-2 pl-5 rounded-md pr-3 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm'/>
+          <Field name="firstName"  placeholder="Bussiness Name" className='bg-white w-full border border-slate-300 py-2 pl-5 rounded-md pr-3 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm'/>
          <div className='h-6 text-sm text-red-900 pl-2 pt-0.5'> {errors.firstName && touched.firstName ? (
             <div className=''>{errors.firstName}</div> 
           ) : null} </div>
@@ -63,7 +63,7 @@ export const Bussregister = () => (
 
           <Button className='bg-blue-400 text-white text-xl w-full' type="submit"> Register</Button>
         
-        </form>
+        </Form>
       )}
     </Formik>
     <p className='text-sm text-center'>Already have an account? <Link href="\" className='text-blue-500'>Login instead</Link> </p>

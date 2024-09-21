@@ -3,7 +3,7 @@ import {Navbar, NavbarBrand, NavbarContent, DropdownItem, DropdownTrigger, Dropd
 
 const Navabar = () => {
 
-  const user = true;
+  const IsloginIn = true;
 
   return (
     <div>
@@ -24,7 +24,7 @@ const Navabar = () => {
       </NavbarContent>
 
       {
-        !user ? (
+        !IsloginIn ? (
           <NavbarContent as="div" justify="end" >
             <NavbarItem className='cursor-pointer '> <Button  radius='none' style={{ backgroundColor:"#E8ECEF",color:"#219ebc", border:"solid #219ebc 1px"}}>Sign Up</Button></NavbarItem>
             <NavbarItem className='cursor-pointer '><Button  radius='none' style={{ backgroundColor:"#219ebc",color:"white"}}> Log In </Button></NavbarItem>
